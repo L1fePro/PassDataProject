@@ -31,13 +31,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5D-7D-IsI">
                                         <rect key="frame" x="0.0" y="73" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -54,9 +54,15 @@
                                 </state>
                                 <connections>
                                     <action selector="sendPressedWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J8d-aL-sIw"/>
-                                    <segue destination="Cda-3u-WH6" kind="show" id="wEV-1K-BYf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i46-cM-vWd">
+                                <rect key="frame" x="140" y="644" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -73,6 +79,8 @@
                     <connections>
                         <outlet property="loginTextField" destination="vR6-Zb-rCh" id="uRM-R6-MWB"/>
                         <outlet property="passwordTextField" destination="P5D-7D-IsI" id="6Fz-4I-BmJ"/>
+                        <outlet property="returnLabel" destination="i46-cM-vWd" id="P5b-VP-nUk"/>
+                        <segue destination="Cda-3u-WH6" kind="show" identifier="detailSegue" id="alb-9B-2Vh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -102,12 +110,12 @@
                                     <action selector="sendPressedWithButton:" destination="Cda-3u-WH6" eventType="touchUpInside" id="97T-3e-z2a"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quL-U5-ISr">
-                                <rect key="frame" x="176.33333333333334" y="227" width="61.666666666666657" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quL-U5-ISr">
+                                <rect key="frame" x="139" y="230" width="136" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="UYr-Xx-51V"/>
-                                    <constraint firstAttribute="width" constant="61.666666666666657" id="zkd-NB-HQl"/>
+                                    <constraint firstAttribute="height" constant="54" id="UYr-Xx-51V"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="136" id="zkd-NB-HQl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -116,8 +124,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IGf-cA-Q9R" firstAttribute="top" secondItem="quL-U5-ISr" secondAttribute="bottom" constant="150" id="4m6-uW-dei"/>
-                            <constraint firstItem="quL-U5-ISr" firstAttribute="top" secondItem="hgh-kP-BOu" secondAttribute="top" constant="183" id="HlT-6O-kHn"/>
+                            <constraint firstItem="IGf-cA-Q9R" firstAttribute="top" secondItem="quL-U5-ISr" secondAttribute="bottom" constant="152" id="4m6-uW-dei"/>
+                            <constraint firstItem="quL-U5-ISr" firstAttribute="top" secondItem="hgh-kP-BOu" secondAttribute="top" constant="186" id="HlT-6O-kHn"/>
                             <constraint firstItem="quL-U5-ISr" firstAttribute="centerX" secondItem="Qsz-gw-PIf" secondAttribute="centerX" id="VCY-JD-hE8"/>
                             <constraint firstItem="IGf-cA-Q9R" firstAttribute="centerX" secondItem="Qsz-gw-PIf" secondAttribute="centerX" id="W9T-2a-xO9"/>
                             <constraint firstItem="IGf-cA-Q9R" firstAttribute="centerX" secondItem="Qsz-gw-PIf" secondAttribute="centerX" id="obH-Vl-Zhb"/>
@@ -126,11 +134,13 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="quL-U5-ISr" id="aXP-Ng-aKL"/>
+                        <segue destination="0rm-yl-iJw" kind="unwind" identifier="uwindSegue" unwindAction="unwindToMainScreenWithSegue:" id="HoO-cD-JJ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZd-Vp-A2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0rm-yl-iJw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="876" y="114.53201970443351"/>
+            <point key="canvasLocation" x="875.36231884057975" y="114.50892857142857"/>
         </scene>
     </scenes>
 </document>
